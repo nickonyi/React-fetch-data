@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-const Bio = ({ delay }) => {
+/* const Bio = ({ delay }) => {
   const [bioText, setBioText] = useState(null);
 
   useEffect(() => {
@@ -14,6 +14,17 @@ const Bio = ({ delay }) => {
     }, delay);
   }, []);
 
+  return (
+    bioText && (
+      <>
+        <p>{bioText}</p>
+      </>
+    )
+  );
+};
+*/
+
+const Bio = ({ bioText }) => {
   return (
     bioText && (
       <>
