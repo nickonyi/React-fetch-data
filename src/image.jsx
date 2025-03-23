@@ -1,23 +1,37 @@
 import { useEffect, useState } from 'react';
 
-export default function Image() {
+function useImageUrl() {
   const [imgUrl, setImgUrl] = useState(null);
   const [error, setError] = useState(null);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch('https://jsonplaceholder.typicode.com/photos', { mode: 'cors' })
+    fetch('https://jsonplaceholder.typicode.com/photos', {
+      mode: 'cors',
+    })
       .then((response) => {
         if (response.status >= 400) {
           throw new Error('Status error');
         }
         return response.json();
       })
-      .then((response) => setImgUrl(response[0].url))
-      .catch((error) => setError(error));
+      .then((response) =>
+        setImgUrl(
+          response[0]?.url.replace('via.placeholder.com', 'dummyimage.com')
+        )
+      )
+      .catch((error) => setError(error))
+      .finally(() => setLoading(false));
   }, []);
-  console.log(imgUrl);
 
-  if (error) return <p>An error has occured!</p>;
+  return { imgUrl, loading, error };
+}
+
+export default function Image() {
+  const { imgUrl, error, loading } = useImageUrl();
+
+  if (loading) return <p>Loading...</p>;
+  if (error) return <p>A Network error has occured!</p>;
 
   return (
     imgUrl && (
