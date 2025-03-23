@@ -1,11 +1,12 @@
-import './App.css';
-import Image from './image.jsx';
+import React from 'react';
+import Profile from './Profile';
+import './styles.css';
 
 function App() {
   return (
-    <>
-      <Image />
-    </>
+    <div className="App">
+      <Profile delay={1000} />
+    </div>
   );
 }
 
