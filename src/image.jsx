@@ -10,9 +10,7 @@ export default function Image() {
         if (response.status >= 400) {
           throw new Error('Status error');
         }
-        console.log(response.status);
-
-        response.json();
+        return response.json();
       })
       .then((response) => setImgUrl(response[0].url))
       .catch((error) => setError(error));
