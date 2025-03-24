@@ -1,11 +1,9 @@
-import React from 'react';
-import Profile from './Profile';
-import './styles.css';
+import Image from './image';
 
 function App() {
   return (
     <div className="App">
-      <Profile delay={1000} />
+      <Image />
     </div>
   );
 }
