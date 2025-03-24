@@ -1,6 +1,5 @@
 import React from 'react';
 import Profile from './Profile';
-import './styles.css';
 
 function App() {
   return (
