@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-
+/*
 const Bio = ({ delay }) => {
   const [bioText, setBioText] = useState(null);
 
@@ -21,9 +21,8 @@ const Bio = ({ delay }) => {
       </>
     )
   );
-};
+};*/
 
-/*
 const Bio = ({ bioText }) => {
   return (
     bioText && (
@@ -33,6 +32,5 @@ const Bio = ({ bioText }) => {
     )
   );
 };
-*/
 
 export default Bio;
