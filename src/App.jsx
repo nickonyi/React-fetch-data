@@ -1,10 +1,10 @@
 import React from 'react';
-import Profile from './Profile';
+import FetchGetRequest from './getrequest';
 
 function App() {
   return (
     <div className="App">
-      <Profile delay={1000} />
+      <FetchGetRequest />
     </div>
   );
 }
