@@ -1,4 +1,3 @@
-import React from 'react';
 import FetchGetRequest from './getrequest';
 
 function App() {
