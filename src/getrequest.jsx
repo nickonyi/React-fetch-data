@@ -5,6 +5,7 @@ function FetchGetRequest() {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [selectedBody, setSelectedBody] = useState(null);
 
   useEffect(() => {
     async function fetchDataPosts() {
@@ -37,10 +38,11 @@ function FetchGetRequest() {
         {error && <div className="text-red-700">{error}</div>}
         <ul>
           {data &&
-            data.map(({ id, title }) => (
+            data.map(({ id, title, body }) => (
               <li
                 key={id}
                 className="border-b border-gray-100 text-sm sm:text-base"
+                onClick={() => setSelectedBody(body)}
               >
                 <NavLink
                   className={({ isActive }) => {
@@ -59,9 +61,7 @@ function FetchGetRequest() {
       </div>
 
       <div className="bg-gray-100 flex-1 p-4 min-h-[550px]">
-        {data
-          ? data.map((data) => <li key={data.id}>{data.body}</li>)
-          : 'Single post here...'}
+        {selectedBody ? <p>{selectedBody}</p> : 'Single post here...'}
       </div>
     </div>
   );
