@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 
 function FetchGetRequest() {
   const [data, setData] = useState(null);
-  const [loading, setLoading] = useState(null);
+  const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
   useEffect(() => {
@@ -56,6 +56,12 @@ function FetchGetRequest() {
               </li>
             ))}
         </ul>
+      </div>
+
+      <div className="bg-gray-100 flex-1 p-4 min-h-[550px]">
+        {data
+          ? data.map((data) => <li key={data.id}>{data.body}</li>)
+          : 'Single post here...'}
       </div>
     </div>
   );
