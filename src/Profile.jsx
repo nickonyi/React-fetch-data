@@ -49,7 +49,7 @@ const Profile = ({ delay }) => {
   return (
     (imageURL && (
       <div>
-        <h3>Username</h3>
+        <h3>Usedrname</h3>
         <img src={imageURL} alt={'profile'} />
         <Bio bioText={bioText} />
       </div>
