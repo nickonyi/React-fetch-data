@@ -26,7 +26,11 @@ function FetchGetRequest() {
     }
     fetchDataPosts();
   }, []);
-  return <div>Hello</div>;
+  return (
+    <div className="flex">
+      <div className="flex"></div>
+    </div>
+  );
 }
 
 export default FetchGetRequest;
