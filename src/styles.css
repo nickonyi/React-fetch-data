@@ -9,8 +9,4 @@
     --background: 0deg 0% 80.13%;
     --foreground: 222.2 84% 4.9%;
   }
-
-  body {
-    @apply font-sans bg-background text-foreground h-screen;
-  }
 }
