@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { NavLink } from 'react-router-dom';
+import { getRequestWithNativeFetch } from './fetchData';
 
 function FetchGetRequest() {
   const [data, setData] = useState(null);
@@ -10,13 +11,9 @@ function FetchGetRequest() {
   useEffect(() => {
     async function fetchDataPosts() {
       try {
-        const response = await fetch(
-          `https://jsonplaceholder.typicode.com/posts?_limit=8`
+        let postData = await getRequestWithNativeFetch(
+          'https://jsonplaceholder.typicode.com/posts?_limit=8'
         );
-        if (!response.ok) {
-          throw new Error(`HTTP error:status${response.status}`);
-        }
-        let postData = await response.json();
         setData(postData);
         setError(null);
       } catch (error) {
