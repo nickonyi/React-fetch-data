@@ -23,6 +23,7 @@ function FetchGetRequest() {
         setLoading(false);
       }
     }
+
     fetchDataPosts();
   }, []);
 
@@ -39,7 +40,9 @@ function FetchGetRequest() {
               <li
                 key={id}
                 className="border-b border-gray-100 text-sm sm:text-base"
-                onClick={() => setSelectedBody(body)}
+                onClick={() => {
+                  setSelectedBody(body);
+                }}
               >
                 <NavLink
                   className={({ isActive }) => {
